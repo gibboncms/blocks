@@ -4,12 +4,18 @@ namespace GibbonCms\Blocks\Test;
 
 use GibbonCms\Blocks\Blocks;
 use GibbonCms\Blocks\Block;
+use GibbonCms\Gibbon\Filesystems\PlainFilesystem;
+use GibbonCms\Gibbon\Filesystems\FileCache;
 
 class BlocksTest extends TestCase
 {
     function setUp()
     {
-        $this->blocks = new Blocks($this->fixtures . '/blocks');
+        $this->blocks = new Blocks(
+            new PlainFilesystem($this->fixtures.'/blocks'),
+            new FileCache($this->fixtures.'/blocks/.cache')
+        );
+
         $this->blocks->setUp();
     }
 
