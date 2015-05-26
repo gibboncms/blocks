@@ -1,0 +1,27 @@
+{
+    "name": "gibboncms/blocks",
+    "description": "Blocks module for GibbonCms",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sebastian De Deyne",
+            "email": "sebastiandedeyne@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "~4.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "GibbonCms\\Blocks\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GibbonCms\\Blocks\\Test\\": "tests/" 
+        }
+    },
+    "require": {
+        "gibboncms/gibbon": "~0.1"
+    }
+}
