@@ -16,11 +16,12 @@ class Blocks implements Module
 
     /**
      * @param  \GibbonCms\Gibbon\Filesystems\Filesystem $filesystem
+     * @param  string $directory
      * @param  \GibbonCms\Gibbon\Filesystems\FileCache $fileCache
      */
-    public function __construct(Filesystem $filesystem, FileCache $fileCache)
+    public function __construct(Filesystem $filesystem, $directory, FileCache $fileCache)
     {
-        $this->repository = new FileRepository($filesystem, $fileCache, new BlockFactory);
+        $this->repository = new FileRepository($filesystem, $directory, $fileCache, new BlockFactory, true);
     }
 
     /**

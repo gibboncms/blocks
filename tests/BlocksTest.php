@@ -12,7 +12,8 @@ class BlocksTest extends TestCase
     function setUp()
     {
         $this->blocks = new Blocks(
-            new PlainFilesystem($this->fixtures.'/blocks'),
+            new PlainFilesystem($this->fixtures),
+            'blocks',
             new FileCache($this->fixtures.'/blocks/.cache')
         );
 
@@ -26,7 +27,7 @@ class BlocksTest extends TestCase
     }
 
     /** @test */
-    function it_gets_a_page()
+    function it_gets_a_block()
     {
         $this->assertInstanceOf(Block::class, $this->blocks->find('dummy'));
     }
@@ -35,5 +36,6 @@ class BlocksTest extends TestCase
     function it_gets_all_blocks()
     {
         $this->assertCount(1, $this->blocks->getAll());
+        $this->assertContainsOnlyInstancesOf(Block::class, $this->blocks->getAll());
     }
 }
