@@ -10,7 +10,7 @@ use GibbonCms\Gibbon\Repositories\FileRepository;
 class Blocks implements Module
 {
     /**
-     * @var \GibbonCms\Gibbon\Repository
+     * @var \GibbonCms\Gibbon\Repositories\Repository
      */
     protected $repository;
 
