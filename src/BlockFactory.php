@@ -29,23 +29,6 @@ class BlockFactory implements Factory
     }
 
     /**
-     * Transform a block to raw data
-     * 
-     * @param \GibbonCms\Blocks\Block $block
-     * @return string
-     */
-    public function encode($block)
-    {
-        $contents = ''
-            . $this->dumpToSimpleYaml($block->attributes)
-            . $this->getDataSeparator()
-            . $block->body
-        ;
-
-        return $contents;
-    }
-
-    /**
      * Return the classname of the entity this factory makes
      * 
      * @return string
