@@ -29,7 +29,13 @@ class BlocksTest extends TestCase
     /** @test */
     function it_gets_a_block()
     {
-        $this->assertInstanceOf(Block::class, $this->blocks->find('dummy'));
+        $this->assertInstanceOf(Block::class, $this->blocks->get('dummy'));
+    }
+
+    /** @test */
+    function it_gets_a_blocks_contents()
+    {
+        $this->assertContains('## Hello world', $this->blocks->contents('dummy'));
     }
 
     /** @tes */

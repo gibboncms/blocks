@@ -28,9 +28,18 @@ class Blocks implements Module
      * @param  string $id
      * @return \GibbonCms\Blocks\Block
      */
-    public function find($id)
+    public function get($id)
     {
         return $this->repository->find($id);
+    }
+
+    /**
+     * @param  string $id
+     * @return \GibbonCms\Blocks\Block
+     */
+    public function contents($id)
+    {
+        return $this->repository->find($id)->body;
     }
 
     /**
