@@ -39,7 +39,9 @@ class Blocks implements Module
      */
     public function contents($id)
     {
-        return $this->repository->find($id)->body;
+        $block = $this->repository->find($id);
+        
+        return isset($block) ? $block->body : null;
     }
 
     /**

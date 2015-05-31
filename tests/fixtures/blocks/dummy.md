@@ -1,7 +1,7 @@
 class: block
 id: block-hello-world
 
-===
+---
 
 ## Hello world
 

@@ -33,15 +33,20 @@ class BlocksTest extends TestCase
     }
 
     /** @test */
+    function it_gets_a_headless_block()
+    {
+        $this->assertInstanceOf(Block::class, $this->blocks->get('headless'));
+    }
+
+    /** @test */
     function it_gets_a_blocks_contents()
     {
         $this->assertContains('## Hello world', $this->blocks->contents('dummy'));
     }
 
-    /** @tes */
-    function it_gets_all_blocks()
+    /** @test */
+    function it_gets_a_headless_blocks_contents()
     {
-        $this->assertCount(1, $this->blocks->getAll());
-        $this->assertContainsOnlyInstancesOf(Block::class, $this->blocks->getAll());
+        $this->assertContains('I have no head.', $this->blocks->contents('headless'));
     }
 }

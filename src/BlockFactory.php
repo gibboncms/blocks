@@ -23,7 +23,7 @@ class BlockFactory implements Factory
 
         return $this->createAndFill([
             'id'                => $data['id'],
-            'attributes'        => $meta,
+            'attributes'        => $meta ?: [],
             'body'              => $parts['body'],
         ]);
     }
